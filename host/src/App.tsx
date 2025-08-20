@@ -1,24 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 //@ts-ignore
-import Counter from "remote/Counter";
+import MFE from "remote/MFE";
 import "./index.scss";
 
 const App = () => (
-  <div
-    style={{
-      marginTop: "40px",
-      fontSize: "24px",
-      maxWidth: "1200px",
-      margin: "auto",
-      padding: "20px",
-    }}
-  >
-    <div>Name: host</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Custom</div>
-    <Counter />
+  <div style={{ minHeight: "100vh" }}>
+    <main
+      style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        padding: "40px 20px",
+      }}
+    >
+      <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
+        Welcome to the Host Application
+      </h2>
+      <p style={{ marginBottom: "30px", color: "#6c757d" }}>
+        This host application loads and renders microfrontends from remote
+        applications.
+      </p>
+
+      {/* Render the MFE */}
+      <MFE />
+    </main>
   </div>
 );
 const rootElement = document.getElementById("app");

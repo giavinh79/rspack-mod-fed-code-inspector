@@ -76,7 +76,7 @@ module.exports = {
       name: "remote",
       filename: "remoteEntry.js",
       exposes: {
-        "./Counter": "./src/Counter",
+        "./MFE": "./src/MFE",
       },
       shared: {
         react: { eager: true },

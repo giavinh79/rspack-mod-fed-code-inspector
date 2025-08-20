@@ -1,6 +1,6 @@
 # Rspack Module Federation
 
-Simple pnpm workspace using Rspack & Module Federation
+Simple pnpm workspace using Rspack & Module Federation. The host app contains a header and renders a microfrontend (MFE) from the remote application.
 
 ## Development Scripts
 

@@ -7,16 +7,18 @@ const App = () => (
   <div
     style={{
       marginTop: "40px",
-      fontSize: "24px",
       maxWidth: "1200px",
       margin: "auto",
       padding: "20px",
     }}
   >
-    <div>Name: remote</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Custom</div>
+    <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>
+      Remote Application
+    </h1>
+    <p>
+      This is the standalone remote application that exposes microfrontend
+      components.
+    </p>
   </div>
 );
 const rootElement = document.getElementById("app");
