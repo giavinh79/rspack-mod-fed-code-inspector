@@ -1,0 +1,28 @@
+{
+  "name": "rspack-modfed-code-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:host": "pnpm --filter host start",
+    "dev:remote": "pnpm --filter remote start",
+    "build:host": "pnpm --filter host build",
+    "build:remote": "pnpm --filter remote build",
+    "build:all": "pnpm --filter host build && pnpm --filter remote build",
+    "install:all": "pnpm install"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rspack/cli": "0.5.4",
+    "@rspack/core": "0.5.4",
+    "@rspack/plugin-react-refresh": "0.5.4",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "postcss": "^8.2.1",
+    "postcss-loader": "^8.0.0",
+    "react-refresh": "^0.14.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
