@@ -13,22 +13,19 @@ pnpm install
 ### Development Servers
 
 ```bash
-# Start host application (http://localhost:8080)
-pnpm dev:host
+# Start app (run in separate terminals)
+pnpm dev:remote & pnpm dev:host
 
 # Start remote application (http://localhost:8081)
 pnpm dev:remote
-
-# Start both (run in separate terminals)
-pnpm dev:remote & pnpm dev:host
 ```
 
 ### Build
 
 ```bash
-# Build both applications
-pnpm build:all
-
 # Build remote application
 pnpm build:remote
+
+# Build both applications
+pnpm build:all
 ```

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "pnpm dev:remote & pnpm dev:host",
     "dev:host": "pnpm --filter host start",
     "dev:remote": "pnpm --filter remote start",
     "build:host": "pnpm --filter host build",
