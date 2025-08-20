@@ -20,18 +20,15 @@ pnpm dev:host
 pnpm dev:remote
 
 # Start both (run in separate terminals)
-pnpm dev:host & pnpm dev:remote
+pnpm dev:remote & pnpm dev:host
 ```
 
 ### Build
 
 ```bash
-# Build host application
-pnpm build:host
+# Build both applications
+pnpm build:all
 
 # Build remote application
 pnpm build:remote
-
-# Build both applications
-pnpm build:all
 ```

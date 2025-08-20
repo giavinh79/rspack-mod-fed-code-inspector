@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 //@ts-ignore
 import MFE from "remote/MFE";
-import "./index.scss";
 
 const App = () => (
   <div style={{ minHeight: "100vh" }}>

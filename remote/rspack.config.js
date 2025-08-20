@@ -25,16 +25,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                config: "../postcss.config.js",
-              },
-            },
-          },
-        ],
         type: "css",
       },
       {
@@ -43,7 +33,6 @@ module.exports = {
           {
             loader: "builtin:swc-loader",
             options: {
-              sourceMap: true,
               jsc: {
                 parser: {
                   syntax: "typescript",
