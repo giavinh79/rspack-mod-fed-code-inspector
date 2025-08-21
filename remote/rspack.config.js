@@ -1,11 +1,20 @@
 const rspack = require("@rspack/core");
 const refreshPlugin = require("@rspack/plugin-react-refresh");
 const isDev = process.env.NODE_ENV === "development";
+const { codeInspectorPlugin } = require("code-inspector-plugin");
+
+const inspectorPlugin =
+  process.env.NODE_ENV === "development" &&
+  codeInspectorPlugin({
+    bundler: "rspack",
+  });
+
 /**
  * @type {import('@rspack/cli').Configuration}
  */
 module.exports = {
   context: __dirname,
+  devtool: "source-map",
   entry: {
     main: "./src/index.ts",
   },
@@ -79,6 +88,7 @@ module.exports = {
     new rspack.HtmlRspackPlugin({
       template: "./src/index.html",
     }),
+    inspectorPlugin,
     isDev ? new refreshPlugin() : null,
   ].filter(Boolean),
 };

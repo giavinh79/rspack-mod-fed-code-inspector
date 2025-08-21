@@ -1,6 +1,14 @@
 const rspack = require("@rspack/core");
 const refreshPlugin = require("@rspack/plugin-react-refresh");
 const isDev = process.env.NODE_ENV === "development";
+const { codeInspectorPlugin } = require("code-inspector-plugin");
+
+const inspectorPlugin =
+  process.env.NODE_ENV === "development" &&
+  codeInspectorPlugin({
+    bundler: "rspack",
+  });
+
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -64,6 +72,7 @@ module.exports = {
     new rspack.container.ModuleFederationPlugin({
       name: "host",
       filename: "remoteEntry.js",
+      devtool: "source-map",
       exposes: {},
       remotes: {
         remote: "remote@http://localhost:8081/remoteEntry.js",
@@ -81,6 +90,7 @@ module.exports = {
     new rspack.HtmlRspackPlugin({
       template: "./src/index.html",
     }),
+    inspectorPlugin,
     isDev ? new refreshPlugin() : null,
   ].filter(Boolean),
 };
