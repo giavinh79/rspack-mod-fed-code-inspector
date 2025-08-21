@@ -24,10 +24,10 @@ function MFE() {
           padding: "1rem",
         }}
         onClick={() => {
-          throw new Error("test");
+          console.error("test");
         }}
       >
-        Click for error
+        Click for console error
       </button>
     </div>
   );
